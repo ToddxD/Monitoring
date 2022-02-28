@@ -5,6 +5,7 @@ pipeline {
         stage("build") {
             steps {
                 echo 'building the application'
+                checkout scm
                 withGradle() {
                     sh 'gradlew build'
                 }
