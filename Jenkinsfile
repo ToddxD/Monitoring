@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'building the application'
                 withGradle() {
-                    sh './gradlew build'
+                    sh '${JENKINS_HOME}/gradlew build'
                 }
             }
         }
