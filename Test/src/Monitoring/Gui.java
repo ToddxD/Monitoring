@@ -1,5 +1,9 @@
 package Monitoring;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
+
 import javax.swing.*;  
 
 public class Gui {
@@ -38,7 +42,13 @@ public class Gui {
 		
 		JButton b2=new JButton("click");//creating instance of JButton  
 		b2.setBounds(130,400,100, 40);//x axis, y axis, width, height  
-				
+		b2.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent arg0) {
+	            t2.setText("new value");
+	        }
+	    });
+
 		
 		f.add(t1);
 		f.add(t2);
@@ -50,8 +60,27 @@ public class Gui {
 		f.setSize(1000,1000);//400 width and 500 height  
 		f.setLayout(null);//using no layout managers  
 		f.setVisible(true);//making the frame visible  
+		
+		
+		int abc = 0;
+		while (true) {
+			if (true) {
+				t2.setText(String.valueOf(abc));
+		abc++;
+		try {
+			TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			}
+		}
+
 	}
 	
 	
 	}  
+
+
+
 
