@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
-
 import javax.swing.*;  
 
 public class Gui {
@@ -16,10 +15,10 @@ public class Gui {
 		JFrame f=new JFrame("Herr Bert Monitoring");//creating instance of JFrame  
 		
 		
-		Color Bground = new Color(132,195,190);//RGB Color Code
-		f.getContentPane().setBackground(Bground);//Setzt den Hintergrund auf die vorher "ausgerechnete" Farbe
-		ImageIcon img = new ImageIcon("E:/Herrbert.png");
-		f.setIconImage(img.getImage());
+		Color c1 = new Color(132,195,190);//RGB Color Code
+		f.getContentPane().setBackground(c1);//Sets the background color to the one saved in "c1"
+		ImageIcon img = new ImageIcon("E:/Herrbert.png");//Sets the Path for the icon "img"
+		f.setIconImage(img.getImage());//Sets the Frame icon to the one saved in "img"
 		
 		
 		JLabel l1 = new JLabel("Anzahl Prozesse");
