@@ -1,5 +1,6 @@
 package Monitoring;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
@@ -12,9 +13,13 @@ public class Gui {
 	
 	public  void name() {
 		
-		JFrame f=new JFrame();//creating instance of JFrame  
+		JFrame f=new JFrame("Herr Bert Monitoring");//creating instance of JFrame  
 		
 		
+		Color Bground = new Color(132,195,190);//RGB Color Code
+		f.getContentPane().setBackground(Bground);//Setzt den Hintergrund auf die vorher "ausgerechnete" Farbe
+		ImageIcon img = new ImageIcon("E:/Herrbert.png");
+		f.setIconImage(img.getImage());
 		
 		
 		JLabel l1 = new JLabel("Anzahl Prozesse");
@@ -32,16 +37,16 @@ public class Gui {
 		
 		
 		JLabel l2 = new JLabel("Maximaler Arbeitsspeicher");
-		l2.setBounds(30,310,200,40);//x axis, y axis, width, height  
+		l2.setBounds(30,210,200,40);//x axis, y axis, width, height  
 		l2.setVisible(true);
 		
 		JTextArea t2 = new JTextArea();
-		t2.setBounds(30,400,100, 40);//x axis, y axis, width, height  
+		t2.setBounds(30,300,100, 40);//x axis, y axis, width, height  
 		t2.setEditable(false);
 		t2.setText("test");
 		
 		JButton b2=new JButton("click");//creating instance of JButton  
-		b2.setBounds(130,400,100, 40);//x axis, y axis, width, height  
+		b2.setBounds(130,300,100, 40);//x axis, y axis, width, height  
 		b2.addActionListener(new ActionListener() {
 	        @Override
 	        public void actionPerformed(ActionEvent arg0) {
@@ -57,7 +62,7 @@ public class Gui {
 		f.add(b1);//adding button in JFrame  
 		f.add(b2);//adding button in JFrame  
 		
-		f.setSize(1000,1000);//400 width and 500 height  
+		f.setSize(400,500);//400 width and 500 height  
 		f.setLayout(null);//using no layout managers  
 		f.setVisible(true);//making the frame visible  
 		
