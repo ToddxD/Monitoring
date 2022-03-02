@@ -69,6 +69,7 @@ public class Gui {
 		
 		
 		int abc = 0;
+		Mailoutput test =	new Mailoutput();
 		while (true) {
 			
 			t1.setText(String.valueOf(abc));
@@ -81,7 +82,8 @@ public class Gui {
 			e.printStackTrace();
 			System.err.println("yo ich kann nicht schlafen. Manno ");
 		}
-			
+	
+		
 		}
 
 	}
