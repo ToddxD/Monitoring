@@ -46,13 +46,15 @@ public class Gui {
 		
 		JButton b2=new JButton("click");//creating instance of JButton  
 		b2.setBounds(130,300,100, 40);//x axis, y axis, width, height  
-		b2.addActionListener(new ActionListener() {
-	        @Override
-	        public void actionPerformed(ActionEvent arg0) {
-	            t2.setText("new value");
-	        }
-	    });
+//		b2.addActionListener(new ActionListener() {
+//	        @Override
+//	        public void actionPerformed(ActionEvent arg0) {
+//	            t2.setText("new value");
+//	        }
+//	    });
 
+		
+	
 		
 		f.add(t1);
 		f.add(t2);
@@ -68,7 +70,8 @@ public class Gui {
 		
 		int abc = 0;
 		while (true) {
-			if (true) {
+			
+			t1.setText(String.valueOf(abc));
 				t2.setText(String.valueOf(abc));
 		abc++;
 		try {
@@ -76,8 +79,9 @@ public class Gui {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.err.println("yo ich kann nicht schlafen. Manno ");
 		}
-			}
+			
 		}
 
 	}
