@@ -11,7 +11,7 @@ public class Gui {
 	
 	
 	public  void name() {
-		
+
 		JFrame f=new JFrame("Herr Bert Monitoring");//creating instance of JFrame  
 		
 		
@@ -85,12 +85,6 @@ public class Gui {
 	
 		
 		}
-
 	}
 	
-	
-	}  
-
-
-
-
+}  
