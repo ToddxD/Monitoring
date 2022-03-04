@@ -37,13 +37,23 @@ public class Gui {
 		JTextArea textArbeitsspeicherWarnung = new JTextArea();
 		textArbeitsspeicherWarnung.setBounds(200, 300, 100, 40);
 		textArbeitsspeicherWarnung.setEditable(false);
+		
+		JLabel labelLetztesDatum = new JLabel("Zuletzt Aktualisiert:");
+		labelLetztesDatum.setBounds(30, 350, 200, 40);
+		labelLetztesDatum.setVisible(true);
 
+		JTextArea textLetztesDatum = new JTextArea();
+		textLetztesDatum.setBounds(30, 390, 200, 20);
+		textLetztesDatum.setEditable(false);
+		
 		jFrame.add(textProzess);
 		jFrame.add(textArbeitsspeicher);
 		jFrame.add(labelProzesse);
-		jFrame.add(labelArbeitspeicher);
+		jFrame.add(labelLetztesDatum);
 		jFrame.add(textArbeitsspeicherWarnung);
 		jFrame.add(textProzessWarnung);
+		jFrame.add(labelLetztesDatum);
+		jFrame.add(textLetztesDatum);
 
 		jFrame.setSize(400, 500);
 		jFrame.setLayout(null);
@@ -56,9 +66,11 @@ public class Gui {
 
 			float arbeitsspeicher = connector.getArbeitsspeicher();
 			int prozess = connector.getProzess();
+			String letztesDatum = connector.getLetztesDatum();
 
 			textArbeitsspeicher.setText(arbeitsspeicher + "");
 			textProzess.setText(prozess + "");
+			textLetztesDatum.setText(letztesDatum);
 
 			if (arbeitsspeicher < 15.63) {
 				textProzessWarnung.setText("ACHTUNG!");
