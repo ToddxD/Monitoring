@@ -9,6 +9,7 @@ public class MysqlCon {
 
 	private int prozess = 0;
 	private float arbeitsspeicher = 0.0f;
+	private String letztesDatum = "";
 
 	public void connect() {
 
@@ -25,6 +26,7 @@ public class MysqlCon {
 			if (rs.next()) {
 				prozess = rs.getInt("Prozesse");// je nachdem wie gezählt wird eventuell 2
 				arbeitsspeicher = rs.getFloat("Arbeitsspeicher");// je nachdem wie gezählt wird eventuell 3
+				letztesDatum = rs.getString("Datum");
 			}
 			con.close();
 		}
@@ -42,6 +44,10 @@ public class MysqlCon {
 
 	public float getArbeitsspeicher() {
 		return arbeitsspeicher;
+	}
+	
+	public String getLetztesDatum() {
+		return letztesDatum;
 	}
 
 }
