@@ -1,4 +1,4 @@
-package Monitoring;
+package monitoring;
 
 public class Main {
 

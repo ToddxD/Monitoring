@@ -1,10 +1,11 @@
-package Test;
+package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import Monitoring.MysqlCon;
+import monitoring.MysqlCon;
 
 class MysqlConTest {
 
