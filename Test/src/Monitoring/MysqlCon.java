@@ -1,51 +1,44 @@
 package Monitoring;
 
-import java.sql.*;  
+import java.sql.*;
 
-class MysqlCon{  
-	
-	String prozess = "",
-	 arbeitsspeicher ="";
-	
-	
-	public MysqlCon() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	private void name() {
-		
+public class MysqlCon {
 
-	
- 
-	try{  
-		Class.forName("com.mysql.jdbc.Driver");  
-		
-		Connection con=DriverManager.getConnection( 
-				
-				
-				
-		"jdbc:mysql://17.28.163.3:3306/logger","root");//here 17.28.163.3:3306 is host with port, logger is database name and root is username  
-		Statement stmt=con.createStatement(); 
-		
-		ResultSet rs=stmt.executeQuery('SELECT Datum, Prozesse, Arbeitsspeicher FROM Monitoring WHERE Datum = (SELECT max(Datum) FROM Monitoring)'); 
+	private int prozess = 0;
+	private float arbeitsspeicher = 0.0f;
 
-		this.arbeitsspeicher= rs[0];
-		 this.prozess = rs[1];
-	
-		while()  
-		Prozesse = rs.getString(1)//je nachdem wie gezählt wird eventuell 2
-		Arbeitsspeicher = rs.getString(2)//je nachdem wie gezählt wird eventuell 3
-		System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  //Test der einzelnen Werte
-		con.close();  
+	public void connect() {
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection(
+					"jdbc:mysql://17.28.163.3:3306/logger?user=root&password=");// here 17.28.163.3:3306 is host with port,
+																		// logger is database name and root is username
+			Statement stmt = con.createStatement();
+
+			ResultSet rs = stmt.executeQuery(
+					"SELECT Datum, Prozesse, Arbeitsspeicher FROM Monitoring WHERE Datum = (SELECT max(Datum) FROM Monitoring)");
+
+			if (rs.next()) {
+				prozess = rs.getInt("Prozesse");// je nachdem wie gezählt wird eventuell 2
+				arbeitsspeicher = rs.getFloat("Arbeitsspeicher");// je nachdem wie gezählt wird eventuell 3
+			}
+			con.close();
 		}
-	
-	
-	catch(Exception e){ System.out.println(e);
-	
-	
-	}  
-	
+
+		catch (Exception e) {
+			throw new IllegalArgumentException(e);
+
+		}
+
 	}
-	
-		  
+
+	public int getProzess() {
+		return prozess;
+	}
+
+	public float getArbeitsspeicher() {
+		return arbeitsspeicher;
+	}
+
 }
